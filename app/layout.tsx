@@ -5,6 +5,7 @@ import { ThemeProvider } from '@/contexts/theme-provider';
 import connectToDb from '@/db';
 import './globals.css';
 import '../styles/prism.css';
+import TelemetryInit from '@/components/telemetry-init';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const spaceGrotesk = Space_Grotesk({
@@ -47,6 +48,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             disableTransitionOnChange
           >
             {children}
+            <TelemetryInit />
           </ThemeProvider>
         </body>
       </html>
